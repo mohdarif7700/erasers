@@ -38,7 +38,7 @@ async def on_ready():
     
     print("Connected to discord.")
     
-    await bot.send_message(bot_channel_id, "**READY ?** ")
+    #await bot.send_message(bot_channel_id, "**READY ?** ")
    
 
    
@@ -51,10 +51,10 @@ async def on_message(message):
     global answer_scores
     global answer_scores_last
 
-    if message.server == None:
+    if message.guild == None:
         return
     if message.content.lower() == "-h":
-       if "554283064822333441" in [role.id for role in message.author.roles]:
+       if "580254721848246283" in [role.id for role in message.author.roles]:
            sent_new_message =False
            answer_scores = {
                 "1": 0,
@@ -77,7 +77,7 @@ async def on_message(message):
     global answer
     global wrong
 
-    if message.server == None:
+    if message.guild == None:
         return
 
    
