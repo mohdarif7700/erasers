@@ -4,9 +4,8 @@ import discord
 
 import asyncio
 
-bot_channel_id = discord.Object(id='557047819832393739')
-oot_channel_id_list = ["557047819832393739","446448458090545172","523359846297239575","513818839008673833","525131707410677761","523359669280833536","513818250652680213"]
-
+bot_channel_id = discord.Object(id='580211268971921409')
+oot_channel_id_list = ["580211268971921409"]
 
 sent_new_message = False
 answer_scores = {
@@ -54,7 +53,7 @@ async def on_message(message):
 
     if message.server == None:
         return
-    if message.content.lower() == "-hqtq":
+    if message.content.lower() == "-h":
        if "554283064822333441" in [role.id for role in message.author.roles]:
            sent_new_message =False
            answer_scores = {
@@ -197,7 +196,7 @@ async def discord_send():
                     embed.add_field(name="B", value=f"{answer_scores['2']}{two_cross}{two_check}", inline=False)
                     embed.add_field(name="C", value=f"{answer_scores['3']}{three_cross}{three_check}", inline=False)
                     
-                    embed.set_footer(text=f"© MATRICKS GAMING | 7700", icon_url="")
+                    embed.set_footer(text=f"ABC", icon_url="")
                    
                     answer_message = await send_embed(bot, embed)
                     sent_new_message = True
@@ -208,7 +207,7 @@ async def discord_send():
                     embed.add_field(name="B", value=f"{answer_scores['2']}{two_cross}{two_check}", inline=False)
                     embed.add_field(name="C", value=f"{answer_scores['3']}{three_cross}{three_check}", inline=False)
                        
-                    embed.set_footer(text=f"© MATRICKS GAMING | 7700", icon_url="")
+                    embed.set_footer(text=f"© ABC", icon_url="")
                     x = await edit_embed(bot, answer_message, embed)
                     await bot.add_reaction(x,emoji="✅")
                     await bot.add_reaction(x,emoji="❌")
@@ -222,7 +221,7 @@ async def discord_send():
         await asyncio.sleep(0)
 
 loop = asyncio.get_event_loop()
-loop.create_task(bot.start("NTU3OTEwODMxMjU0MzM5NTk3.D3Sh5w.3Sr9NO-7OOpywmqGiMtw0AVRoqM"))
+loop.create_task(bot.start("NTgwMjc5MjM1ODk4MjQ1MTMx.XOOZOQ.ZLMDQXJ-kmoeBpSBWJ5S8f8MJMk"))
 loop.create_task(selfbot.start("NDcxNzUzNjA2Nzk0NTc1ODky.D3DLjw.r9t-wvWsJq-IJ9Y7PvLU2DJ6_ZE", bot=False))
 
 loop.create_task(discord_send())
